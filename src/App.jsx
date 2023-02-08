@@ -1,33 +1,26 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
-import { Navbar } from './components/navbar'
-import { Title } from './components/Title'
-import { NavItem } from './components/Nav-item'
+
+import { Navbar } from './components/navbar/Navbar'
+import { Header } from './components/Header'
+import { Grid, GridItem } from './ui/grid';
+import "./index.css";
+
+
+
 
 function App() {
-  const itens = [
-    "Página Inicial",
-    "Pesquisa",
-    "Explorar",
-    "Reels",
-    "mensagens",
-    "Notificações",
-    "Criar",
-    "Perfil",
-  ]
-  
+
   return(
     <>
-    <Navbar>
-      <Title/>
-      {itens.map((item) => (
-        <NavItem key= {item} text={item} />
-      ))}
-    </Navbar>
-
+    <Grid >
+      <GridItem>
+        <Navbar/>
+      </GridItem>
+      <GridItem>
+        <Header/>
+      </GridItem>
+    </Grid>
     </>
-  )
+  );
 }
 
 export default App
