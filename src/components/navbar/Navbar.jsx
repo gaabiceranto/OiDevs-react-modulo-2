@@ -1,5 +1,5 @@
 import { NavItem } from "../NavItem";
-import { Title } from "../Title";
+import { Title } from "../../ui/Title";
 import * as S from "./styles";
  
 

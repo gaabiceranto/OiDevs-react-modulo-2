@@ -1,18 +1,19 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 
-// import './text.module.css'
-// export const Text = (props) => {
-//     const classes = props.bold ? "bold" : ""
-//     return <div className={classes}>
-//         {props.children}
-//         </div>
-// }
-
-export const TextWrapper = styled.div `
-    color:${(props => props.color || '#fff')} ;
-    font-weight: ${(props) => props.bold ? 900 : ""};
+const textCss = css`
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Rubik&display=swap');
+  color: ${(props) => props.color || "#fff"};
+  font-weight: ${(props) => (props.bold ? "900" : "")};
+  ${(props) => (props.size === "small" ? "font-size: 12px;" : "")}
+  font-family: "Rubik";
 `;
 
-export const Text = (props) => {
-    return <TextWrapper {...props}>{props.children} </TextWrapper>
-}
+export const Text = styled.div`
+  ${textCss}
+`;
+
+export const TextLink = styled.a`
+  all: unset;
+  ${textCss};
+  cursor: pointer;
+`;
