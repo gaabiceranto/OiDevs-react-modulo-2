@@ -1,3 +1,4 @@
+import React from 'react'
 import { Avatar } from '../avatar'
 import * as S from './styles'
 
@@ -26,7 +27,27 @@ const highlightList=[
 ]
 
 
-export const Highlights = () =>{
+const extractTextStrings = (item) => {
+    if (!item.text) return "NONE";
+    return item.text;
+  };
+  
+  export const removeInvalidValues = (item) => {
+    if (item === "NONE") {
+      return false;
+    } else {
+      return true;
+    }
+  };
+  
+  export const Highlights = () => {
+    const normalizeData = (data) =>
+      data.map(extractTextStrings).filter(removeInvalidValues);
+  
+    React.useEffect(() => {
+      const meuArray = normalizeData(highlightList);
+      
+    }, []);
 
     return(
     <S.Wrapper>

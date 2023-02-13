@@ -4,11 +4,20 @@ import { Header } from './components/header'
 import { Grid, GridItem } from './ui/grid';
 import "./index.css";
 import { Highlights } from './components/highlights/Highlights';
-
+import { useEffect } from 'react';
+import { fetcher } from './components/services';
 
 
 
 function App() {
+  useEffect (() => {
+    const makeRequest = async () => {
+      const response = await fetcher ("photos");
+      console.log (response)
+    };
+    makeRequest();
+    
+  },[])
 
   return(
     <>
