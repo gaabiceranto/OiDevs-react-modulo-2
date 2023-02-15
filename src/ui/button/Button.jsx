@@ -1,10 +1,10 @@
-import { Text } from "../text"
-import * as S from "./style"
+import {Text} from "../text";
+import * as S from "./style";
 
 export const Button = (props) => {
-    return <S.Wrapper>
-        <Text>
-        {props.children}
-        </Text>
-        </S.Wrapper>
-}
+  return (
+    <S.Wrapper {...props}>
+      <Text>{props.children}</Text>
+    </S.Wrapper>
+  );
+};

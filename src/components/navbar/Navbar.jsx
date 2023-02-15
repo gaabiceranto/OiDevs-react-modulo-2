@@ -16,6 +16,10 @@ const items = [
 
 
 export const Navbar = (props) => {
+  const onClickLoginButtonHandler = () =>{
+    console.log("clicou")
+    props.onClickLoginButton("login")
+  }
     return (
     <>
     <S.NavbarWrapper>
@@ -29,6 +33,7 @@ export const Navbar = (props) => {
           ))}
         </S.Box>
       </S.Box>
+      <NavItem onClick = {onClickLoginButtonHandler} text="Ir para Login"/>
       <NavItem text="Mais"/>
       </S.NavbarWrapper>
       </>
